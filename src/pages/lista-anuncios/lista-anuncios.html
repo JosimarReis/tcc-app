@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title text-center>APP TCC - resultado da busca</ion-title>
+  </ion-navbar>
+</ion-header>
+  <ion-content class="cards-bg">
+
+    <ion-card  *ngFor="let anuncio of an" >
+
+            <img src="{{anuncio.imagem}}"  (click)="visualizarAnuncio(anuncio)"/>
+        
+            <ion-card-content  (click)="visualizarAnuncio(anuncio)">
+              <ion-card-title>
+                {{anuncio.titulo}}
+              </ion-card-title>
+              <p>
+                  {{anuncio.preco}} | {{anuncio.localizacao.cidade}} - {{anuncio.localizacao.uf}}              
+            </p>
+            </ion-card-content >
+        
+            <ion-row no-padding>
+              <ion-col>
+                <button ion-button clear small color="danger" icon-start>
+                  <ion-icon name='star'></ion-icon>
+                  Favorito
+                </button>
+              </ion-col>
+              <ion-col text-center (click)="visualizarAnuncio(anuncio)">
+                <button ion-button clear small color="danger" icon-start>
+                  <ion-icon name='information-circle'></ion-icon>
+                  Ver mais
+                </button>
+              </ion-col>
+              <ion-col text-right>
+                <button ion-button clear small color="danger" icon-start>
+                  <ion-icon name='share-alt'></ion-icon>
+                  Compartilhar
+                </button>
+              </ion-col>
+            </ion-row>
+        
+          </ion-card>
+  </ion-content>
